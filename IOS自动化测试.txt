@@ -1,5 +1,0 @@
-工具:python3      pycharm
-       homebrew
-       libimobiledevice       brew install --HEAD libimobiledevice
-       carthage	      brew install carthage
-       webdriveragent       git clone git://github.com/facebook/WebDriverAgent.git

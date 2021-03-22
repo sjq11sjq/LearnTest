@@ -1,0 +1,71 @@
+adb devices
+这个命令是查看当前连接的设备, 连接到计算机的android设备或者模拟器将会列出显示
+
+开启服务
+adb start-server
+
+关闭服务
+adb kill-server
+
+安装软件
+adb install apk路径
+
+覆盖安装
+adb install -r (APK路径) -r 代表如果apk已安装，重新安装apk并保留数据和缓存文件
+
+系统应用
+adb shell pm list packages –s
+
+第三方应用
+adb shell pm list packages -3
+
+列出手机装的所有app的包名
+adb shell pm list packages
+
+卸载软件
+adb uninstall <软件名>
+
+adb uninstall -k <软件名>
+如果加 -k 参数,为卸载软件但是保留配置和缓存文件
+
+将电脑文件传输到移动端
+adb push 电脑路径 移动端路径
+
+将移动端文件传输到电脑
+adb pull 移动端路径 电脑路径
+
+查看adb命令帮助信息
+adb help
+
+截屏例
+adb shell screencap -p 截图文件路径
+
+登录设备shell
+adb shell
+
+查看手机CPU情况
+adb shell dumpsys cpuinfo
+
+查看应用内存使用情况
+adb shell dumpsys meminfo +包名：应用的内存使用情况
+
+显示磁盘使用信息
+adb shell dumpsys diskstats
+
+清除应用缓存信息:
+adb shell pm clear [packagename]
+
+查看电池状态
+adb shell dumpsys battery
+
+adb logcat 查看手机日志
+adb logcat 命令格式 : adb logcat [选项] [过滤项], 其中 选项 和 过滤项 在 中括号 [] 中, 说明这是可选的;
+">"输出 : “>” 后面跟着要输出的日志文件, 可以将 logcat 日志输出到文件中, 使用adb logcat > log 命令（adb logcat >C:\log\1.txt）
+指定 logcat 的日志输出格式 :
+– "-v"选项 : 使用adb logcat -v time 命令, 可以啥看日志的输出时间;
+将手机日志输出到本地文件中
+adb logcat -v time > C:/log/aa.txt
+
+
+
+

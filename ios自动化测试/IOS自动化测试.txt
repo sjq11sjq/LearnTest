@@ -2,4 +2,5 @@
        homebrew
        libimobiledevice       brew install --HEAD libimobiledevice
        carthage	      brew install carthage
-       webdriveragent       git clone git://github.com/facebook/WebDriverAgent.git
+       webdriveragent       git clone git://github.com/facebook/WebDriverAgent.git     
+		      webdriveragent目录下使用脚本./Scripts/bootstrap.sh

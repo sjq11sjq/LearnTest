@@ -1,0 +1,103 @@
+一、数据库简单操作
+1.创建数据库：
+create database 数据库名称
+	
+2.查看所有数据库：
+show databases;
+
+3.打开进入数据库：
+use  数据库名称
+
+​4.查看当前所在的数据库位置：
+select database();
+
+​5.更改数据库名字 ：
+alter databases  数据库名称2;
+
+​6.更改数据库mydatabase的字符集 ：
+alter database 数据库名称  charset GBK; 	
+
+​7.删除数据库：
+drop database 数据库名称;
+
+二、表操作
+
+1.查看该数据库中的表： show tables;
+
+2.在当前库中查看别的库中的表：show tables from 数据库名;
+
+//1. 创建表（personId为表名，设置了关键值则不能重复）
+create table 表名 (personId int, name varchar(20), gender varchar(10), primary key(personId)); 
+
+//2. 在表中添加新列
+alter table 表名 add age int;
+
+//3.在表中删除列
+alter  table  表名   drop   字段名;
+  
+//4.修改表中的旧字段为新字段
+ alter table 表名  change  旧字段名  新字段名  数据类型;
+  
+//5.将学生表中的number学号字段变成固定长度，且放到第二位。   
+alter table 表名  modify  字段名  数据类型  [位置];
+例：alter  table  my_student  modify  number  char(10)  after id;
+
+//6. 查看表结构信息    
+desc 表名;
+
+//7. 删除表
+drop table 表名;
+
+//8. 复制表
+create table 新表名 like 表名;
+
+//9.删除数据表：一次性删除多个表
+drop  table  表名1,表名2,…… ;       
+
+
+
+四、增删改查 SQL语句
+
+1.mysql中的 + 号仅有一个功能：运算符
+
+例：
+
+select 100+90; //两个操作数都是数值型，则做正常运算 190
+select '123'+90; //只要有一方为字符型，则试图将字符型转化为数值型                       //若转换成功，则做正常运算 213
+select 'mysql'+90;//若转换失败，则将字符型转换成0，结果为 90
+select null+10;   //只要有一方为null，结果必为null
+
+//函数： ifnull(参数1,参数2)
+若参数1不为null，则返回参数1
+如参数1为null，则返回参数2
+例如：
+select ifnull(字段,0) as 别名 from 表名;
+
+1.查询数据：
+select * from 表名 where 字段 = 值;
+
+2.去重查询：
+select distinct 字段 from 表名
+
+3.插入数据：
+insert into 表名 (字段1, ……) values (值1, ……);
+
+4.更新数据：
+update 表名 set 字段=值,…,字段=值 where 字段=值;
+
+5.删除数据：
+delete from 表名 where 字段=值;
+ 
+//6.结构中的数据
+select * from 表名;
+//查询表中单个字段
+select 字段名 from 表名;
+//查询表中多个字段
+select 字段1,字段2,... from 表名;
+
+//7.给字段起别名
+select 字段 as 别名；
+select 字段1 as 别名1,字段2 as 别名2,... from 表名;  (as 可以省略)(若别名中有空格，则要加“”，如："别 名")
+
+8.查询时将多个字段连接，并显示一个新的字段
+select concat(字段1,字段2,..) as 别名 from 表名;

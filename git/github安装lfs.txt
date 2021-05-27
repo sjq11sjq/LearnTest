@@ -1,0 +1,5 @@
+1.浏览器搜索git lfs 下载 
+2.安装git lfs文件
+3.指定仓库下命令执行   git lfs install
+4.将 .gitattributes隐藏文件上传至远程库
+5.成功上传大文件

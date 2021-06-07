@@ -9,7 +9,7 @@ import unittest
 import os
 
 # 打开MuMu模拟器
-os.startfile(r'D:\MuMu\emulator\nemu\EmulatorShell\NemuPlayer.exe'), sleep(50)
+os.startfile(r'D:\MuMu\emulator\nemu\EmulatorShell\NemuPlayer.exe'), sleep(55)
 # adb连接MuMu模拟器
 os.system('adb connect 127.0.0.1:7555')
 poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
@@ -31,7 +31,7 @@ class WYCDApp(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
     FileDir = "D:\\pythonProject\\case"
-    suite = unittest.defaultTestLoader.discover(FileDir, pattern="case*.py", top_level_dir=None)
-    runner = TestRunner(suite, filename='D:\\pythonProject\\case\\apptest.html', report_dir='D:\\pythonProject\\report'
+    suite1 = unittest.defaultTestLoader.discover(FileDir, pattern="case*.py", top_level_dir=None)
+    runner = TestRunner(suite1, filename='D:\\pythonProject\\case\\apptest.html', report_dir='D:\\pythonProject\\report'
                         , title='APP自动化测试', tester='沈家庆')
-    runner.run(suite)
+    runner.run(suite1)

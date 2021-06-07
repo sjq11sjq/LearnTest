@@ -31,7 +31,7 @@ class WYCDApp(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
     FileDir = "D:\\pythonProject\\case"
-    suite1 = unittest.defaultTestLoader.discover(FileDir, pattern="case*.py", top_level_dir=None)
-    runner = TestRunner(suite1, filename='D:\\pythonProject\\case\\apptest.html', report_dir='D:\\pythonProject\\report'
+    suite = unittest.defaultTestLoader.discover(FileDir, pattern="case*.py", top_level_dir=None)
+    runner = TestRunner(suite, filename='D:\\pythonProject\\case\\apptest.html', report_dir='D:\\pythonProject\\report'
                         , title='APP自动化测试', tester='沈家庆')
-    runner.run(suite1)
+    runner.run(suite)
